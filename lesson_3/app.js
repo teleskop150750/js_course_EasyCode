@@ -28,7 +28,7 @@ console.log(null);
 
 console.log(undefined);
 
-console.log(Symbol());
+console.table(Symbol());
 
 /**
 * Типы данных:
