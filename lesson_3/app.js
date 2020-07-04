@@ -28,6 +28,7 @@ console.log(null);
 
 console.log(undefined);
 
+// eslint-disable-next-line symbol-description
 console.table(Symbol());
 
 /**
