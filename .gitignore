@@ -1,0 +1,6 @@
+# .gitignore
+# package.json
+# .eslintrc.json
+# .eslintignore
+/node_modules/
+package-lock.json
