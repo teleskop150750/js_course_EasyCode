@@ -1,0 +1,1 @@
+https://frontender.info/es6-in-depth-iterators-and-the-for-of-loop/
