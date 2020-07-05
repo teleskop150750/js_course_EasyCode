@@ -27,3 +27,36 @@ switch (color) {
   default:
     console.log('Default');
 }
+
+// Задание
+
+// Записать в виде switch case следующее условие:
+// if (a === ‘block’) {
+// 	console.log(‘block’)
+// } else if (a === ‘none’) {
+// 	console.log(‘none’)
+// } else if (a === ‘inline’) {
+// console.log(‘inline’)
+// } else {
+// 	console.log(‘other’)
+// }
+// Записать условие, используя конструктор switch. В консоли должно отразиться только одно значение.
+
+const a1 = 'block';
+
+switch (a1) {
+  case 'block':
+    console.log('block');
+    break;
+  case 'none':
+    console.log('none');
+    break;
+  case 'inline':
+    console.log('inline');
+    break;
+  default:
+    console.log('other');
+    break;
+}
+
+// Из задач по условному оператору if else выполнить задачи 1 и 2 в виде тернарного оператора.
