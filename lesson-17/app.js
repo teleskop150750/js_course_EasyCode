@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
+
+/* eslint-disable linebreak-style */
 const plus = (x = 0, y = 0) => x + y;
 const plusRes = plus(1, 2);
 
 const withoutArgs = () => console.log('Hello world');
-const singleArg = x => x * 2;
+const singleArg = (x) => x * 2;
 const moreActions = (a, b) => {
   a *= 2;
   b *= 3;
@@ -35,3 +38,21 @@ const obj = {
 
 obj.getAge();
 // obj.getAgeArrow();
+
+
+// Задачи
+// 1  Переделать функция с использованием функции-стрелки (в методе reduce тоже использовать arrow functiion)
+
+(() => {
+  function sum(...array) {
+    console.log(array);
+    if (!array.length) {
+      return 0;
+    }
+      return array.reduce((prew, next) => prew + next, 0);
+  }
+  let result = sum(1, 2, 3, 4);
+  console.log(result);
+  result = sum();
+  console.log(result);
+})();
