@@ -1,5 +1,5 @@
+/* eslint-disable prefer-rest-params */
 /* eslint-disable no-unused-vars */
-
 /* eslint-disable linebreak-style */
 const plus = (x = 0, y = 0) => x + y;
 const plusRes = plus(1, 2);
