@@ -1,5 +1,7 @@
-const users = [
-  {
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
+const users = [{
     _id: '5cdce6ce338171bb473d2855',
     index: 0,
     isActive: false,
@@ -104,7 +106,7 @@ const usersName = users.map((user) => user.name);
 // console.log(usersName);
 
 // Reduce
-const totalBalance = users.reduce((acc, user) => (acc += user.balance), 0);
+const totalBalance = users.reduce((acc, user) => (acc + user.balance), 0);
 // console.log(totalBalance);
 const usersObj = users.reduce((acc, user) => {
   acc[user._id] = user;
@@ -128,3 +130,242 @@ const numArr = [10, 7, 44, 32];
 numArr.sort((prev, next) => prev - next);
 users.sort((prevUser, nextUser) => prevUser.age - nextUser.age);
 console.log(users);
+
+
+// Задачи
+// 1 На основе массива[1, 2, 3, 5, 8, 9, 10] сформировать новый массив, каждый элемент которогобудет зранить информацию о числе и его четности
+// [
+//   {
+//   digit: 1,
+//   odd: true,
+//   }
+// ]
+
+(() => {
+  const arr = [1, 2, 3, 5, 8, 9, 10];
+  const arr2 = arr.map((item) => ({
+    digit: item,
+    odd: item % 2 !== 0,
+  }));
+  console.log(arr2);
+})();
+
+// 2 Проверить, содержит ли массив [12, 4, 50, 1, 0, 18, 40] элементы, равные нулю. Если да - вернуть true
+
+(() => {
+  const arr = [12, 4, 50, 1, 0, 18, 40];
+  const result = arr.some((item) => item === 0);
+  console.log(result);
+})();
+
+// 3  Проверить, все элементы массива имеюь длину более 3х символов ['yes', 'hello', 'no', 'easycode', 'what']. Если да - вернуть true.
+
+(() => {
+  const arr = ['yes', 'hello', 'no', 'easycode', 'what'];
+  const result = arr.every((item) => item.length > 3);
+  console.log(result);
+})();
+
+// 4  Дан массив объектов, где каждый объект содержит информацию о букве и месте её положения в строке {буква: “a”, позиция_в_предложении: 1}:
+
+// [{char:"a",index:12}, {char:"w",index:8}, {char:"Y",index:10}, {char:"p",index:3}, {char:"p",index:2},
+// {char:"N",index:6}, {char:" ",index:5}, {char:"y",index:4}, {char:"r",index:13}, {char:"H",index:0},
+// {char:"e",index:11}, {char:"a",index:1}, {char:" ",index:9}, {char:"!",index:14}, {char:"e",index:7}]
+
+// Напишите функцию, которая из элементов массива соберет и вернёт
+// строку, основываясь на index каждой буквы. Например:
+// [{char:"H",index:0}, {char:"i",index: 1}, {char:"!",index:2}] → “Hi!”
+
+
+(() => {
+  const arr = [
+    {
+      char: 'a',
+      index: 12,
+    },
+    {
+      char: 'w',
+      index: 8,
+    },
+    {
+      char: 'Y',
+      index: 10,
+    },
+    {
+      char: 'p',
+      index: 3,
+    },
+    {
+      char: 'p',
+      index: 2,
+    },
+    {
+      char: 'N',
+      index: 6,
+    },
+    {
+      char: ' ',
+      index: 5,
+    },
+    {
+      char: 'y',
+      index: 4,
+    },
+    {
+      char: 'r',
+      index: 13,
+    },
+    {
+      char: 'H',
+      index: 0,
+    },
+    {
+      char: 'e',
+      index: 11,
+    },
+    {
+      char: 'a',
+      index: 1,
+    },
+    {
+      char: ' ',
+      index: 9,
+    },
+    {
+      char: '!',
+      index: 14,
+    },
+    {
+      char: 'e',
+      index: 7,
+    },
+  ];
+  const result = arr.sort((a, b) => (a.index - b.index))
+    .reduce((str, next) => str + next.char, '');
+  console.log(result);
+})();
+
+// Задачи
+
+//  1  Отсортируйте массив массивов так, чтобы вначале располагались наименьшие массивы (размер массива определяется его длиной): [  [14, 45],  [1],  ['a', 'c', 'd']  ] → [ [1], [14, 45], ['a', 'c', 'd'] ]
+
+(() => {
+  const arr = [
+    [
+      14, 45,
+    ],
+    [
+      1,
+    ],
+    [
+      'a', 'c', 'd',
+    ],
+  ];
+  arr.sort((a, b) => a.length - b.length);
+  console.log(...arr);
+})();
+
+// 2 Есть массив объектов:
+// [
+//     {cpu: 'intel', info: {cores:2, сache: 3}},
+//     {cpu: 'intel', info: {cores:4, сache: 4}},
+//     {cpu: 'amd', info: {cores:1, сache: 1}},
+//     {cpu: 'intel', info: {cores:3, сache: 2}},
+//     {cpu: 'amd', info: {cores:4, сache: 2}}
+// ]
+
+// Отсортировать их по возрастающему количеству ядер (cores).
+
+(() => {
+  const arr = [
+    {
+      cpu: 'intel',
+      info: {
+        cores: 2,
+        сache: 3,
+      },
+    },
+    {
+      cpu: 'intel',
+      info: {
+        cores: 4,
+        сache: 4,
+      },
+    },
+    {
+      cpu: 'amd',
+      info: {
+        cores: 1,
+        сache: 1,
+      },
+    },
+    {
+      cpu: 'intel',
+      info: {
+        cores: 3,
+        сache: 2,
+      },
+    },
+    {
+      cpu: 'amd',
+      info: {
+        cores: 4,
+        сache: 2,
+      },
+    },
+  ];
+  arr.sort((a, b) => a.info.cores - b.info.cores);
+  console.log(...arr);
+})();
+
+// 3. Создать функцию, которая будет принимать массив продуктов и две цены. Функция должна вернуть все продукты, цена которых находится в указанном диапазоне, и сортировать от дешевых к дорогим:
+// filterCollection(products, 15, 30) → [{...price: 15}, {...price: 18.9}, {...price: 19}, {...price: 25}]
+
+(() => {
+  const products = [
+    {
+      title: 'prod1',
+      price: 5.2,
+    },
+    {
+      title: 'prod2',
+      price: 0.18,
+    },
+    {
+      title: 'prod3',
+      price: 15,
+    },
+    {
+      title: 'prod4',
+      price: 25,
+    },
+    {
+      title: 'prod5',
+      price: 18.9,
+    },
+    {
+      title: 'prod6',
+      price: 8,
+    },
+    {
+      title: 'prod7',
+      price: 19,
+    },
+    {
+      title: 'prod8',
+      price: 63,
+    },
+  ];
+
+  const filterCollection = (arr, min, max) => arr.slice()
+    .sort(
+    (a, b) => a.price - b.price,
+  )
+    .filter(
+      (product) => product.price >= min && product.price <= max,
+    );
+
+  const res = filterCollection(products, 15, 30);
+
+  console.log(res);
+})();
