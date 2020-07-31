@@ -71,7 +71,7 @@
 // Подсказка, функция minus должна возвращать другую функцию.
 
 (() => {
-  const minus = (n = 0) => ((m = 0) => n - m);
+  const minus = (num1 = 0) => ((num1 = 0) => n - m);
   let res = minus(10)(6);
   console.log(res);
   res = minus(5)(6);
