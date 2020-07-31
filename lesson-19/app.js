@@ -21,8 +21,8 @@
 
   const updtVal = updateValue(2);
   const updtVal2 = updateValue(4);
-  // console.log(updtVal(1));
-  // console.log(updtVal(0));
+  console.log(updtVal(1));
+  console.log(updtVal(2));
   // console.log(updtVal2(2));
   // console.log(updtVal2(0));
 
