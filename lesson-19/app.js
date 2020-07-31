@@ -71,7 +71,7 @@
 // Подсказка, функция minus должна возвращать другую функцию.
 
 (() => {
-  const minus = (num1 = 0) => ((num1 = 0) => n - m);
+  const minus = (num1 = 0) => ((num2 = 0) => num1 - num2);
   let res = minus(10)(6);
   console.log(res);
   res = minus(5)(6);
@@ -94,10 +94,18 @@
 // multiply(10); // 120 (12 * 10)
 
 (() => {
-  const multiplyMaker = (n) => {
-    const x = 1;
-    const f = () => x * n;
-  };
+  const multiplyMaker = (num1) => ((num2) => num1 *= num2);
   const multiply = multiplyMaker(2);
-  console.log(multiply(2));
+
+  let res = multiply(2); // 4 (2 * 2)
+  console.log(res);
+
+  res = multiply(1); // 4 (4 * 1)
+  console.log(res);
+
+  res = multiply(3); // 12 (4 * 3)
+  console.log(res);
+
+  res = multiply(10); // 120 (12 * 10)
+  console.log(res);
 })();
