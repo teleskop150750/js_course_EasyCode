@@ -11,10 +11,10 @@ const obj2 = {
   age: 20,
 };
 
-let newObj = Object.assign({}, obj2, obj1);
-newObj = Object.assign({}, obj1);
+let newObj = Object.assign({}, obj2, obj1); // let newObj = { ...obj2, ...obj1 };
+newObj = Object.assign({}, obj1); // newObj = { ...obj1 };
 newObj = JSON.parse(JSON.stringify(obj1));
-// console.log(newObj.info === obj1.info);
+console.log(newObj.info === obj1.info);
 
 const keys = Object.keys(obj2);
 console.log(keys);
