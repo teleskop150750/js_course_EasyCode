@@ -1,3 +1,4 @@
+/* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prefer-rest-params */
 const user = {
@@ -33,7 +34,10 @@ const newNames = [...names];
 // console.log(...newNames);
 const colorNames = ['some value', ...colors, ...names];
 // console.log(colorNames);
-const newUser = { ...user, age: 30 };
+const newUser = {
+  ...user,
+  age: 30,
+};
 console.log(newUser);
 const {
   info: {
@@ -46,12 +50,16 @@ const {
 function myPerson({
   lastName = '&',
   firstName = '&',
-  info: { skills } = {},
+  info: {
+    skills,
+  } = {},
 } = {}) {
   console.log(skills);
+  console.log(12);
 }
 
-// myPerson(newUser);
+myPerson(newUser);
+
 function foo(x, y, ...others) {
   console.log(arguments);
   // console.log(Array.prototype.slice.call(arguments));
@@ -67,3 +75,50 @@ function foo2(x, y) {
 }
 
 foo2(...numbers);
+
+// Задачи
+// 1  Используя rest оператор и деструктуризацию, создать функцию, которая принимает любое количество аргументов и возвращает объект, содержащий первый аргумент и массив из остатка:
+
+// func(‘a’, ‘b’, ‘c’, ‘d’) →
+// {
+//   first: ‘a’,
+//   other: [‘b’, ‘c’, ‘d’]
+// }
+
+(() => {
+  const func = (num1, ...arr) => ({
+    first: `${num1}`,
+    other: arr,
+  });
+  console.log(func('a', 'b', 'c', 'd'));
+})();
+
+
+// 2. Организовать функцию getInfo, которая принимает объект вида
+// { name: ...,  info: { employees: [...], partners: [ … ]  } }
+// и выводит в консоль имя (если имени нет, показывать ‘Unknown’) и первые две компании из массива partners:
+
+// const organisation = {
+//   name: 'Google',
+//   info: { employees: [‘Vlad’, ‘Olga’], partners: ['Microsoft', 'Facebook', 'Xing']   }
+// };
+// getInfo(organisation); →
+// Name: Google
+// Partners: Microsoft Facebook
+
+(() => {
+  const organisation = {
+    name: 'Google',
+    info: {
+      employees: ['Vlad', 'Olga'],
+      partners: ['Microsoft', 'Facebook', 'Xing'],
+    },
+  };
+
+  const getInfo = ({ name = 'Unknown', info: { partners: [p1, p2] } }) =>
+`Name: ${name}
+Partners: ${p1} ${p2}`;
+
+  const res = getInfo(organisation);
+  console.log(res);
+})();
