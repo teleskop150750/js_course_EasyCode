@@ -1,3 +1,5 @@
+'use strict';
+
 const tasks = [
   {
     id: '5d2ca9e2e03d40b326596aa7',
@@ -41,8 +43,9 @@ const tasks = [
   const taskContainer = document.querySelector('.tasks');
   const form = document.forms.addTask;
 
-  const listItemTemplate = ({ title, body } = {}) => {
+  const listItemTemplate = ({ id, title, body } = {}) => {
     const li = document.createElement('li');
+    li.dataset.id = id;
     li.classList.add('task');
 
     const h3 = document.createElement('h3');
@@ -110,6 +113,33 @@ const tasks = [
     form.reset();
   };
 
+  const isConfirm = (id) => {
+    const { title } = objOfTasks[id];
+    return confirm(`Вы уверены, что хотите удалить задачу: ${title}`);
+  };
+
+  const deleteTask = (id) => {
+    delete objOfTasks[id];
+  };
+
+  const deleteTaskHtml = (task) => {
+    task.remove();
+  };
+
+  const onDeleteHandler = ({ target }) => {
+    if (target.classList.contains('task__button')) {
+      const parent = target.closest('.task');
+      const id = parent.dataset.id;
+      const confirmed = isConfirm(id);
+
+      if (!confirmed) return;
+      deleteTask(id);
+      deleteTaskHtml(parent);
+      console.log(objOfTasks);
+    }
+  };
+
   renderAllTaskd(objOfTasks);
   form.addEventListener('submit', onFormSubmitHandler);
+  taskContainer.addEventListener('click', onDeleteHandler);
 })(tasks);

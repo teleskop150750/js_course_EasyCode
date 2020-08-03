@@ -20,9 +20,10 @@
     // ],
 		// неиспользуемые переменные
 		"no-unused-vars": "warn",
-		// сонсоль алерт
+		// // сонсоль алерт
 		"no-console": "off",
-		"no-alert": "off",
+    "no-alert": "off",
+    "no-restricted-globals": 0,
 		// x++;
 		"no-plusplus": "off",
 		// пустая строка в конце
