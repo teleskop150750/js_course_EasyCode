@@ -9,7 +9,7 @@
 		"airbnb/base"
 	],
   "parserOptions": {
-    "sourceType": "script"
+    // "sourceType": "script"
   },
 	"rules": {
     // "strict": ["error", "global"],
