@@ -15,7 +15,7 @@
   "author": "teleskop150750",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.3.1",
+    "eslint": "^7.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-html": "^6.0.2",
     "eslint-plugin-import": "^2.22.0"
