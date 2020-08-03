@@ -31,7 +31,7 @@ const title = document.querySelector('h1');
 console.log(title);
 // title.innerHTML = '<span>text</span>';
 // title.textContent = '<span>new text</span>';
-// title.appendChild('<span>appen</span>');
+// title.append('<span>appen</span>');
 // title.insertAdjacentHTML('beforebegin', '<h2>title h2</h2>');
 // title.insertAdjacentElement
 
@@ -46,9 +46,9 @@ const span = document.createElement('span');
 span.textContent = 'span created by createElement';
 span.classList.add('myClass');
 console.log(span);
-title.appendChild(span);
+title.append(span);
 
-// div.appendChild(span);
+// div.append(span);
 const fragment = document.createDocumentFragment();
 const colors = ['black', 'yellow', 'orange'];
 colors.forEach((color) => {
@@ -56,10 +56,10 @@ colors.forEach((color) => {
   item.classList.add(`bg-${color}`);
   item.style.background = color;
   item.textContent = color;
-  fragment.appendChild(item);
+  fragment.append(item);
 });
 
-document.body.appendChild(fragment);
+document.body.append(fragment);
 
 // *Удаление элементов
 // title.remove()
