@@ -27,18 +27,22 @@ const link = document.querySelector('a');
 
 const container = document.querySelector('.container');
 
-btn.addEventListener('click', (e) => {
+const a = (e) => console.log(e.target);
+
+btn.addEventListener('click', () => {
   const div = document.createElement('div');
   const nestedBtn = document.createElement('button');
   div.textContent = Math.random();
   nestedBtn.textContent = 'button';
+  nestedBtn.addEventListener('click', a);
   div.appendChild(nestedBtn);
   container.appendChild(div);
 });
 
-container.addEventListener('click', (e) => {
-  console.dir(e.target);
-  if (e.target.tagName === 'BUTTON') {
-    console.log('button clicked');
-  }
-});
+
+// container.addEventListener('click', (e) => {
+//   console.dir(e.target);
+//   if (e.target.tagName === 'BUTTON') {
+//     console.log('button clicked');
+//   }
+// });
