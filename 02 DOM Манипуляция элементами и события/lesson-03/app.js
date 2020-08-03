@@ -28,6 +28,7 @@ div.setAttribute('id', 'myId');
 
 // *Манипуляция DOM
 const title = document.querySelector('h1');
+console.log(title);
 // title.innerHTML = '<span>text</span>';
 // title.textContent = '<span>new text</span>';
 // title.appendChild('<span>appen</span>');
