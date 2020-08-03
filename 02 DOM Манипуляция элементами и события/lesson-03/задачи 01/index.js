@@ -37,16 +37,24 @@ p.forEach((item) => {
     item.textContent = '-text-';
   }
 });
-
+console.log('--------------------------------------------------------');
 
 // 1. Найти в коде список ul и добавить класс “list”
 document.querySelectorAll('ul').forEach((item) => item.classList.add('lisr'));
+console.log('--------------------------------------------------------');
 
 // 2. Найти в коде ссылку, находящуюся после списка ul, и добавить id=link
-const e = document.querySelector('ul').nextElementSibling;
-console.log(e);
+document.querySelector('ul ~ a').id = 'link';
+console.log('--------------------------------------------------------');
 
 // 3. На li через один (начиная с самого первого) установить класс “item”
+document.querySelectorAll('li').forEach((item, i) => {
+  if (i % 2 === 0) {
+    item.classList.add('item');
+  }
+});
+
 // 4. На все ссылки в примере установить класс “custom-link”
+document.querySelector('a').classList.add('custom-link');
 
 // Код для задач брать со слайда 4.
