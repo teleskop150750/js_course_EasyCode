@@ -1,4 +1,5 @@
 const div = document.querySelector('div');
+console.log(div);
 const titles = document.querySelectorAll('h1');
 // const h1 = document.getElementsByTagName('h1');
 // console.dir(h1);
@@ -24,4 +25,6 @@ div.setAttribute('id', 'myId');
 // div.getAttribute("id")
 // div.hasAttribute("id")
 
-div.dataset.remove.myattr;
+console.log(div.dataset.myattr);
+div.dataset.myattr2 = '2';
+delete div.dataset.myattr;
