@@ -9,10 +9,10 @@
 		"airbnb/base"
 	],
   "parserOptions": {
-    // "sourceType": "script"
+    "sourceType": "script"
   },
 	"rules": {
-    // "strict": ["error", "global"],
+    "strict": [0, "global"],
 		//перенос строк для windows
 		"linebreak-style": [
 			"error",
