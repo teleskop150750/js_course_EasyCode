@@ -24,4 +24,4 @@ div.setAttribute('id', 'myId');
 // div.getAttribute("id")
 // div.hasAttribute("id")
 
-// div.dataset.myattr
+div.dataset.remove.myattr;
