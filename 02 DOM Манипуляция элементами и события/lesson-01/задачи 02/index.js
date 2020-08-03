@@ -37,24 +37,22 @@ console.log(res);
 
 res = isParent(document.querySelector('ul'), document.querySelector('mark'));
 console.log(res);
+console.log('--------------------------------------------------------');
 
 // isParent(document.querySelector('ul'), document.querySelector('mark'));
 // // false так ul НЕ является родительским элементом для mark
 // Функция принимает только DOM объекты.
 
 // 2. Получить список всех ссылок, которые не находятся внутри списка ul
-const links = document.querySelectorAll('a');
-const ul = document.querySelector('ul');
-const arr = [];
-links.forEach((link) => {
-  if (!isParent(ul, link)) {
-    arr.push(link);
-  }
-});
-console.log(arr);
+const [...links] = document.querySelectorAll('a');
+const arr = links.filter((item) => !item.closest('ul'));
+console.log(...arr);
+console.log('--------------------------------------------------------');
 
 // 3. Найти элемент, который находится перед и после списка ul
+const ul = document.querySelector('ul');
 console.log(ul.previousElementSibling);
 console.log(ul);
 console.log(ul.nextElementSibling);
+console.log('--------------------------------------------------------');
 
