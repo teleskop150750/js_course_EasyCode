@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -8,49 +8,26 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-  <link rel="manifest" href="../favicon/site.webmanifest">  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
   <title>Todo List</title>
 </head>
 
-<body>
-  <div class="form-section mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col col-8 mx-auto">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Add new task</h5>
-              <form name="addTask">
-                <input type="text" name="title" id="title" class="form-control" placeholder="Task title" />
-                <input type="text" name="body" id="body" class="form-control mt-3" placeholder="Task body" />
-                <button type="submit" class="btn btn-primary mt-4">
-                  Add task
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="tasks-list-section mt-5">
-    <div class="container">
-      <ul class="list-group">
-        <li class="list-group-item d-flex align-items-center flex-wrap mt-2">
-          <span>My title</span>
-          <p class="mt-2 w-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            soluta vitae sint tenetur quam quisquam explicabo quos? Aut iste
-            ut laborum iure aspernatur, nam ea quibusdam rerum minus magnam
-            dignissimos.
-          </p>
-          <button class="btn btn-danger ml-auto delete-btn">Delete</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <script src="app.js"></script>
+<body class="page__body">
+
+  <form class="form" name="addTask">
+    <h3 class="form__title">Add new task</h3>
+
+    <input type="text" name="title" id="title" class="form__input" placeholder="Task title">
+    <input type="text" name="body" id="body" class="form__input" placeholder="Task body">
+    <button class="form__button" type="submit">Add task</button>
+  </form>
+
+  <ul class="tasks">
+  </ul>
+
+  <script src="index.js"></script>
 </body>
 
 </html>
