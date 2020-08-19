@@ -5,11 +5,61 @@
   margin: 0;
 }
 
+:root {
+  --base-text-color: #212529;
+  --header-bg: #007bff;
+  --header-text-color: #fff;
+  --default-btn-bg: #007bff;
+  --default-btn-text-color: #fff;
+  --default-btn-hover-bg: #0069d9;
+  --default-btn-border-color: #0069d9;
+  --danger-btn-bg: #dc3545;
+  --danger-btn-text-color: #fff;
+  --danger-btn-hover-bg: #bd2130;
+  --danger-btn-border-color: #dc3545;
+  --input-border-color: #ced4da;
+  --input-bg-color: #fff;
+  --input-text-color: #495057;
+  --input-focus-bg-color: #fff;
+  --input-focus-text-color: #495057;
+  --input-focus-border-color: #80bdff;
+  --input-focus-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
 .page {
   font-family: 'Roboto', sans-serif;
 }
 
-.page__body {
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .7rem 1rem;
+  background: var(--header-bg);
+}
+
+.header__title {
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--header-text-color);
+}
+
+.header__theme-select {
+  height: calc(1.5em + .5rem + 2px);
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  vertical-align: middle;
+  line-height: 1.5;
+  color: var(--input-text-color);
+  border-radius: .2rem;
+  border-color: var(--input-border-color);
+  background: var(--input-bg-color);
+}
+
+.main {
   padding: 60px 15px;
 }
 
